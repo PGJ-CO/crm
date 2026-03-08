@@ -17,6 +17,7 @@ import VendorsContractors from "./pages/VendorsContractors";
 import Buyers from "./pages/Buyers";
 import CompanyInfo from "./pages/CompanyInfo";
 import PropertyDetail from "./pages/PropertyDetail";
+import Contracts from "./pages/Contracts";
 import SettingsPage from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
