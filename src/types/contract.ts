@@ -102,7 +102,7 @@ export const defaultCompanyInfo: CompanyInfo = {
   tin: "",
   taxClassification: "",
   entityType: "",
-  signatoryTitle: "",
+  signatoryTitle: "Member",
 };
 
 export const defaultSharedData: SharedContractData = {
