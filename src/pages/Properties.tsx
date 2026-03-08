@@ -3,9 +3,11 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Search, Building2, Bed, Bath, Ruler, Calendar } from 'lucide-react';
 import { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Properties() {
   const { properties, getOwner } = useCRM();
+  const navigate = useNavigate();
   const [search, setSearch] = useState('');
 
   const filtered = useMemo(() => {
@@ -41,7 +43,7 @@ export default function Properties() {
         {filtered.map(prop => {
           const owner = getOwner(prop.ownerId);
           return (
-            <div key={prop.id} className="crm-card p-4">
+            <div key={prop.id} className="crm-card p-4 cursor-pointer hover:ring-1 hover:ring-primary/20 transition-all" onClick={() => navigate(`/properties/${prop.id}`)}>
               <div className="flex items-start justify-between mb-2">
                 <div>
                   <h3 className="font-semibold text-foreground text-sm">{prop.address}</h3>

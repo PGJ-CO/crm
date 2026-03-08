@@ -1,6 +1,6 @@
 import {
   LayoutDashboard, Users, Building2, Megaphone, CheckSquare, UserCheck, Settings, Search,
-  Inbox, Zap, FileText, Building,
+  Inbox, Zap, FileText, Building, HardHat,
 } from 'lucide-react';
 import { NavLink } from '@/components/NavLink';
 import { useLocation } from 'react-router-dom';
@@ -18,6 +18,7 @@ const mainNav = [
   { title: 'Automations', url: '/automations', icon: Zap },
   { title: 'Tasks', url: '/tasks', icon: CheckSquare },
   { title: 'Documents', url: '/documents', icon: FileText },
+  { title: 'Vendors', url: '/vendors', icon: HardHat },
   { title: 'Buyers', url: '/buyers', icon: UserCheck },
 ];
 

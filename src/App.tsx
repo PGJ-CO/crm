@@ -13,8 +13,10 @@ import Campaigns from "./pages/Campaigns";
 import Automations from "./pages/Automations";
 import Tasks from "./pages/Tasks";
 import Documents from "./pages/Documents";
+import VendorsContractors from "./pages/VendorsContractors";
 import Buyers from "./pages/Buyers";
 import CompanyInfo from "./pages/CompanyInfo";
+import PropertyDetail from "./pages/PropertyDetail";
 import SettingsPage from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
@@ -37,8 +39,10 @@ const App = () => (
               <Route path="/automations" element={<Automations />} />
               <Route path="/tasks" element={<Tasks />} />
               <Route path="/documents" element={<Documents />} />
+              <Route path="/vendors" element={<VendorsContractors />} />
               <Route path="/buyers" element={<Buyers />} />
               <Route path="/company" element={<CompanyInfo />} />
+              <Route path="/properties/:id" element={<PropertyDetail />} />
               <Route path="/settings" element={<SettingsPage />} />
             </Route>
             <Route path="*" element={<NotFound />} />
