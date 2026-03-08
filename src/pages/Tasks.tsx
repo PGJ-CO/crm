@@ -2,7 +2,7 @@ import { useCRM } from '@/contexts/CRMContext';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
-import { CheckCircle2, Clock, AlertTriangle, Snooze } from 'lucide-react';
+import { CheckCircle2, Clock, AlertTriangle, AlarmClock } from 'lucide-react';
 
 export default function Tasks() {
   const { tasks, updateTaskStatus, getOwner, getLead, getProperty } = useCRM();
