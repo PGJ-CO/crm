@@ -1,6 +1,6 @@
 import {
   LayoutDashboard, Users, Building2, Megaphone, CheckSquare, UserCheck, Settings, Search,
-  Inbox, Zap, FileText, Building,
+  Inbox, Zap, FileText, Building, HardHat,
 } from 'lucide-react';
 import { NavLink } from '@/components/NavLink';
 import { useLocation } from 'react-router-dom';
