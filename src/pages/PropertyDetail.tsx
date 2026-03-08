@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   ArrowLeft, Building2, HardHat, FileText, MessageSquare, DollarSign,
-  Phone, Mail, MapPin, Calendar, User, PenTool,
+  Phone, Mail, MapPin, Calendar, User, PenTool, Scale,
 } from 'lucide-react';
 
 // Stub contractor assignments for demo
