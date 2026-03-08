@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Search, Plus, Phone, Mail, Star, FileText, HardHat, Truck, MapPin } from 'lucide-react';
+import { Search, Plus, Phone, Mail, Star, FileText, HardHat, Truck, MapPin, Scale } from 'lucide-react';
 
 export interface Vendor {
   id: string;
