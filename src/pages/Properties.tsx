@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Search, Building2, Bed, Bath, Ruler, Calendar } from 'lucide-react';
 import { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Properties() {
   const { properties, getOwner } = useCRM();
