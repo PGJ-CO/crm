@@ -6,11 +6,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CRMProvider } from "@/contexts/CRMContext";
 import { AppLayout } from "@/components/layout/AppLayout";
 import Dashboard from "./pages/Dashboard";
+import LeadsInbox from "./pages/LeadsInbox";
 import Leads from "./pages/Leads";
 import Properties from "./pages/Properties";
 import Campaigns from "./pages/Campaigns";
+import Automations from "./pages/Automations";
 import Tasks from "./pages/Tasks";
+import Documents from "./pages/Documents";
 import Buyers from "./pages/Buyers";
+import CompanyInfo from "./pages/CompanyInfo";
 import SettingsPage from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
@@ -26,11 +30,15 @@ const App = () => (
           <Routes>
             <Route element={<AppLayout />}>
               <Route path="/" element={<Dashboard />} />
+              <Route path="/inbox" element={<LeadsInbox />} />
               <Route path="/leads" element={<Leads />} />
               <Route path="/properties" element={<Properties />} />
               <Route path="/campaigns" element={<Campaigns />} />
+              <Route path="/automations" element={<Automations />} />
               <Route path="/tasks" element={<Tasks />} />
+              <Route path="/documents" element={<Documents />} />
               <Route path="/buyers" element={<Buyers />} />
+              <Route path="/company" element={<CompanyInfo />} />
               <Route path="/settings" element={<SettingsPage />} />
             </Route>
             <Route path="*" element={<NotFound />} />

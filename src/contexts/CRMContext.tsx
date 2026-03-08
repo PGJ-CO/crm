@@ -2,6 +2,20 @@ import React, { createContext, useContext, useState, useCallback, ReactNode } fr
 import type { Owner, Property, Lead, Task, Campaign, Buyer, Communication, CRMUser, LeadStage } from '@/types/crm';
 import { seedOwners, seedProperties, seedLeads, seedTasks, seedCampaigns, seedBuyers, seedCommunications, seedUsers } from '@/data/seed';
 
+export interface CompanyInfo {
+  name: string; dba: string; logoUrl: string; ein: string;
+  phone: string; email: string; website: string;
+  street: string; city: string; state: string; zip: string;
+  licenseNumber: string; emailSignature: string; contractDisclaimer: string;
+}
+
+const defaultCompanyInfo: CompanyInfo = {
+  name: '', dba: '', logoUrl: '', ein: '',
+  phone: '', email: '', website: '',
+  street: '', city: '', state: '', zip: '',
+  licenseNumber: '', emailSignature: '', contractDisclaimer: '',
+};
+
 interface CRMState {
   owners: Owner[];
   properties: Property[];
@@ -12,6 +26,7 @@ interface CRMState {
   communications: Communication[];
   users: CRMUser[];
   currentUser: CRMUser;
+  companyInfo: CompanyInfo;
 }
 
 interface CRMActions {
@@ -24,6 +39,7 @@ interface CRMActions {
   getOwner: (id: string) => Owner | undefined;
   getProperty: (id: string) => Property | undefined;
   getLead: (id: string) => Lead | undefined;
+  updateCompanyInfo: (info: CompanyInfo) => void;
 }
 
 const CRMContext = createContext<(CRMState & CRMActions) | null>(null);
@@ -38,6 +54,9 @@ export function CRMProvider({ children }: { children: ReactNode }) {
   const [communications] = useState<Communication[]>(seedCommunications);
   const [users] = useState<CRMUser[]>(seedUsers);
   const [currentUser] = useState<CRMUser>(seedUsers[0]);
+  const [companyInfo, setCompanyInfo] = useState<CompanyInfo>(defaultCompanyInfo);
+
+  const updateCompanyInfo = useCallback((info: CompanyInfo) => setCompanyInfo(info), []);
 
   const updateLeadStage = useCallback((leadId: string, stage: LeadStage) => {
     setLeads(prev => prev.map(l => l.id === leadId ? { ...l, stage, lastTouch: new Date().toISOString().split('T')[0] } : l));
@@ -58,8 +77,8 @@ export function CRMProvider({ children }: { children: ReactNode }) {
 
   return (
     <CRMContext.Provider value={{
-      owners, properties, leads, tasks, campaigns, buyers, communications, users, currentUser,
-      updateLeadStage, updateTaskStatus, addLead, addTask, addOwner, addProperty, getOwner, getProperty, getLead,
+      owners, properties, leads, tasks, campaigns, buyers, communications, users, currentUser, companyInfo,
+      updateLeadStage, updateTaskStatus, addLead, addTask, addOwner, addProperty, getOwner, getProperty, getLead, updateCompanyInfo,
     }}>
       {children}
     </CRMContext.Provider>

@@ -1,5 +1,6 @@
 import {
   LayoutDashboard, Users, Building2, Megaphone, CheckSquare, UserCheck, Settings, Search,
+  Inbox, Zap, FileText, Building,
 } from 'lucide-react';
 import { NavLink } from '@/components/NavLink';
 import { useLocation } from 'react-router-dom';
@@ -10,14 +11,18 @@ import {
 
 const mainNav = [
   { title: 'Dashboard', url: '/', icon: LayoutDashboard },
+  { title: 'Inbox', url: '/inbox', icon: Inbox },
   { title: 'Leads', url: '/leads', icon: Users },
   { title: 'Properties', url: '/properties', icon: Building2 },
   { title: 'Campaigns', url: '/campaigns', icon: Megaphone },
+  { title: 'Automations', url: '/automations', icon: Zap },
   { title: 'Tasks', url: '/tasks', icon: CheckSquare },
+  { title: 'Documents', url: '/documents', icon: FileText },
   { title: 'Buyers', url: '/buyers', icon: UserCheck },
 ];
 
 const bottomNav = [
+  { title: 'Company', url: '/company', icon: Building },
   { title: 'Settings', url: '/settings', icon: Settings },
 ];
 
