@@ -54,6 +54,9 @@ export function CRMProvider({ children }: { children: ReactNode }) {
   const [communications] = useState<Communication[]>(seedCommunications);
   const [users] = useState<CRMUser[]>(seedUsers);
   const [currentUser] = useState<CRMUser>(seedUsers[0]);
+  const [companyInfo, setCompanyInfo] = useState<CompanyInfo>(defaultCompanyInfo);
+
+  const updateCompanyInfo = useCallback((info: CompanyInfo) => setCompanyInfo(info), []);
 
   const updateLeadStage = useCallback((leadId: string, stage: LeadStage) => {
     setLeads(prev => prev.map(l => l.id === leadId ? { ...l, stage, lastTouch: new Date().toISOString().split('T')[0] } : l));
