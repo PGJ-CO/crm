@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Properties() {
   const { properties, getOwner } = useCRM();
+  const navigate = useNavigate();
   const [search, setSearch] = useState('');
 
   const filtered = useMemo(() => {
