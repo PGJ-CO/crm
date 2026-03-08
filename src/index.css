@@ -144,3 +144,27 @@
     @apply bg-muted text-muted-foreground;
   }
 }
+
+@layer utilities {
+  .contract-paper {
+    @apply bg-card shadow-lg border border-border;
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 1in;
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .contract-paper {
+    box-shadow: none;
+    border: none;
+    padding: 0.5in;
+    max-width: 100%;
+  }
+}
