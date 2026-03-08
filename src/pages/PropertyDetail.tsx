@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useCRM } from '@/contexts/CRMContext';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   ArrowLeft, Building2, HardHat, FileText, MessageSquare, DollarSign,
-  Phone, Mail, MapPin, Calendar, User, PenTool,
+  Phone, Mail, MapPin, Calendar, User, PenTool, Scale,
 } from 'lucide-react';
 
 // Stub contractor assignments for demo
@@ -212,11 +212,16 @@ export default function PropertyDetail() {
             </CardHeader>
             <CardContent>
               <div className="p-8 text-center border border-dashed rounded-lg">
-                <PenTool className="h-8 w-8 text-muted-foreground mx-auto mb-3" />
-                <p className="font-medium text-foreground mb-1">Contract App Integration</p>
-                <p className="text-sm text-muted-foreground max-w-md mx-auto">
-                  Share your contract app code and it will be integrated here — create, send, and sign documents linked to this property.
+                <Scale className="h-8 w-8 text-primary mx-auto mb-3" />
+                <p className="font-medium text-foreground mb-1">Create Contractor Agreements</p>
+                <p className="text-sm text-muted-foreground max-w-md mx-auto mb-4">
+                  Generate professional owner-contractor agreements with AI-powered estimate extraction.
                 </p>
+                <Link to={`/contracts?property=${id}`}>
+                  <Button size="sm">
+                    <Scale className="mr-1 h-3 w-3" /> Create Contract
+                  </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>

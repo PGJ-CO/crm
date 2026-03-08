@@ -17,6 +17,7 @@ import VendorsContractors from "./pages/VendorsContractors";
 import Buyers from "./pages/Buyers";
 import CompanyInfo from "./pages/CompanyInfo";
 import PropertyDetail from "./pages/PropertyDetail";
+import Contracts from "./pages/Contracts";
 import SettingsPage from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
@@ -43,6 +44,7 @@ const App = () => (
               <Route path="/buyers" element={<Buyers />} />
               <Route path="/company" element={<CompanyInfo />} />
               <Route path="/properties/:id" element={<PropertyDetail />} />
+              <Route path="/contracts" element={<Contracts />} />
               <Route path="/settings" element={<SettingsPage />} />
             </Route>
             <Route path="*" element={<NotFound />} />

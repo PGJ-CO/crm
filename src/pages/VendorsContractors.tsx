@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Search, Plus, Phone, Mail, Star, FileText, HardHat, Truck, MapPin } from 'lucide-react';
+import { Search, Plus, Phone, Mail, Star, FileText, HardHat, Truck, MapPin, Scale } from 'lucide-react';
 
 export interface Vendor {
   id: string;
@@ -41,6 +42,7 @@ const ratingColors: Record<string, string> = {
 export default function VendorsContractors() {
   const [search, setSearch] = useState('');
   const [tab, setTab] = useState<'all' | 'contractor' | 'vendor'>('all');
+  const navigate = useNavigate();
 
   const filtered = seedVendors.filter(v => {
     const matchesTab = tab === 'all' || v.type === tab;
@@ -62,7 +64,12 @@ export default function VendorsContractors() {
             {seedVendors.filter(v => v.type === 'contractor').length} contractors · {seedVendors.filter(v => v.type === 'vendor').length} vendors
           </p>
         </div>
-        <Button size="sm" disabled><Plus className="mr-1 h-3 w-3" /> Add New</Button>
+        <div className="flex gap-2">
+          <Button size="sm" variant="outline" onClick={() => navigate('/contracts')}>
+            <Scale className="mr-1 h-3 w-3" /> Create Contract
+          </Button>
+          <Button size="sm" disabled><Plus className="mr-1 h-3 w-3" /> Add New</Button>
+        </div>
       </div>
 
       <div className="flex flex-col sm:flex-row gap-3 mb-4">

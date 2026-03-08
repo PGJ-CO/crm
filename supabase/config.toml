@@ -1,0 +1,7 @@
+project_id = "wdgiupavmajikhdzgimv"
+
+[functions.extract-estimate]
+verify_jwt = false
+
+[functions.extract-tax-doc]
+verify_jwt = false
