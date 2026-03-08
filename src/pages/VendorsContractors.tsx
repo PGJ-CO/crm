@@ -64,7 +64,12 @@ export default function VendorsContractors() {
             {seedVendors.filter(v => v.type === 'contractor').length} contractors · {seedVendors.filter(v => v.type === 'vendor').length} vendors
           </p>
         </div>
-        <Button size="sm" disabled><Plus className="mr-1 h-3 w-3" /> Add New</Button>
+        <div className="flex gap-2">
+          <Button size="sm" variant="outline" onClick={() => navigate('/contracts')}>
+            <Scale className="mr-1 h-3 w-3" /> Create Contract
+          </Button>
+          <Button size="sm" disabled><Plus className="mr-1 h-3 w-3" /> Add New</Button>
+        </div>
       </div>
 
       <div className="flex flex-col sm:flex-row gap-3 mb-4">
