@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ["var(--font-display)"],
+        body: ["var(--font-body)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +61,23 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        crm: {
+          success: "hsl(var(--crm-success))",
+          warning: "hsl(var(--crm-warning))",
+          info: "hsl(var(--crm-info))",
+          danger: "hsl(var(--crm-danger))",
+        },
+        stage: {
+          new: "hsl(var(--crm-stage-new))",
+          contacted: "hsl(var(--crm-stage-contacted))",
+          warm: "hsl(var(--crm-stage-warm))",
+          appointment: "hsl(var(--crm-stage-appointment))",
+          offer: "hsl(var(--crm-stage-offer))",
+          negotiation: "hsl(var(--crm-stage-negotiation))",
+          contract: "hsl(var(--crm-stage-contract))",
+          closed: "hsl(var(--crm-stage-closed))",
+          dead: "hsl(var(--crm-stage-dead))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,25 +86,22 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "slide-in": {
+          from: { opacity: "0", transform: "translateY(8px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "slide-in": "slide-in 0.3s ease-out",
       },
     },
   },
