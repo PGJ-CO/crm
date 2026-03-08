@@ -6,9 +6,10 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { Search, Plus, List, Columns, Filter, ChevronRight, Phone, MessageSquare, Clock } from 'lucide-react';
+import { Search, Plus, List, Columns, Filter, ChevronRight, Phone, MessageSquare, Clock, Upload } from 'lucide-react';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import CSVImportDialog from '@/components/leads/CSVImportDialog';
 
 type ViewMode = 'kanban' | 'list';
 
@@ -18,6 +19,7 @@ export default function Leads() {
   const [search, setSearch] = useState('');
   const [filterSource, setFilterSource] = useState<string>('all');
   const [addDialogOpen, setAddDialogOpen] = useState(false);
+  const [importDialogOpen, setImportDialogOpen] = useState(false);
 
   const filteredLeads = useMemo(() => {
     return leads.filter(l => {
@@ -48,6 +50,9 @@ export default function Leads() {
           <p className="crm-page-subtitle">{leads.length} total leads · {leads.filter(l => l.stage !== 'dead_dnc' && l.stage !== 'closed_won').length} active</p>
         </div>
         <div className="flex gap-2">
+          <Button size="sm" variant="outline" onClick={() => setImportDialogOpen(true)}>
+            <Upload className="mr-1 h-3 w-3" /> Import CSV
+          </Button>
           <Dialog open={addDialogOpen} onOpenChange={setAddDialogOpen}>
             <DialogTrigger asChild>
               <Button size="sm"><Plus className="mr-1 h-3 w-3" /> Add Lead</Button>
@@ -59,6 +64,7 @@ export default function Leads() {
               <QuickAddForm onClose={() => setAddDialogOpen(false)} />
             </DialogContent>
           </Dialog>
+          <CSVImportDialog open={importDialogOpen} onOpenChange={setImportDialogOpen} />
         </div>
       </div>
 
