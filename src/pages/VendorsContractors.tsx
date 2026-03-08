@@ -42,6 +42,7 @@ const ratingColors: Record<string, string> = {
 export default function VendorsContractors() {
   const [search, setSearch] = useState('');
   const [tab, setTab] = useState<'all' | 'contractor' | 'vendor'>('all');
+  const navigate = useNavigate();
 
   const filtered = seedVendors.filter(v => {
     const matchesTab = tab === 'all' || v.type === tab;
