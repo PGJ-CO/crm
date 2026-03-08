@@ -13,8 +13,10 @@ import Campaigns from "./pages/Campaigns";
 import Automations from "./pages/Automations";
 import Tasks from "./pages/Tasks";
 import Documents from "./pages/Documents";
+import VendorsContractors from "./pages/VendorsContractors";
 import Buyers from "./pages/Buyers";
 import CompanyInfo from "./pages/CompanyInfo";
+import PropertyDetail from "./pages/PropertyDetail";
 import SettingsPage from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
