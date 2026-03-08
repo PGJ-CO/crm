@@ -77,7 +77,7 @@ export const seedCampaigns: Campaign[] = [
       { day: 0, channel: 'sms', template: 'Hi {{first_name}}, I noticed your property at {{address}}. Are you considering selling? Reply STOP to opt out.' },
       { day: 2, channel: 'email', template: 'Subject: Quick question about {{address}}\n\nHi {{first_name}},\nI help homeowners sell quickly, as-is, with no fees. Would you be open to a conversation?' },
       { day: 5, channel: 'sms', template: 'Hi {{first_name}}, just following up on {{address}}. We buy houses as-is, close on your timeline. Any interest? Reply STOP to opt out.' },
-      { day: 10, channel: 'email', template: 'Subject: Still interested in {{address}}\n\n{{first_name}}, just checking in. No pressure—we're here when you're ready.' },
+      { day: 10, channel: 'email', template: 'Subject: Still interested in {{address}}\n\n{{first_name}}, just checking in. No pressure—we are here when you are ready.' },
       { day: 20, channel: 'sms', template: '{{first_name}}, last check-in about {{address}}. If timing isn\'t right, no worries. Reply STOP to opt out.' },
     ],
     status: 'active', goal: 'Convert new leads to warm within 20 days', leadsEnrolled: 8, createdAt: '2025-01-01',
