@@ -43,7 +43,7 @@ export default function Properties() {
         {filtered.map(prop => {
           const owner = getOwner(prop.ownerId);
           return (
-            <div key={prop.id} className="crm-card p-4">
+            <div key={prop.id} className="crm-card p-4 cursor-pointer hover:ring-1 hover:ring-primary/20 transition-all" onClick={() => navigate(`/properties/${prop.id}`)}>
               <div className="flex items-start justify-between mb-2">
                 <div>
                   <h3 className="font-semibold text-foreground text-sm">{prop.address}</h3>
