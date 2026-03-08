@@ -2,6 +2,20 @@ import React, { createContext, useContext, useState, useCallback, ReactNode } fr
 import type { Owner, Property, Lead, Task, Campaign, Buyer, Communication, CRMUser, LeadStage } from '@/types/crm';
 import { seedOwners, seedProperties, seedLeads, seedTasks, seedCampaigns, seedBuyers, seedCommunications, seedUsers } from '@/data/seed';
 
+export interface CompanyInfo {
+  name: string; dba: string; logoUrl: string; ein: string;
+  phone: string; email: string; website: string;
+  street: string; city: string; state: string; zip: string;
+  licenseNumber: string; emailSignature: string; contractDisclaimer: string;
+}
+
+const defaultCompanyInfo: CompanyInfo = {
+  name: '', dba: '', logoUrl: '', ein: '',
+  phone: '', email: '', website: '',
+  street: '', city: '', state: '', zip: '',
+  licenseNumber: '', emailSignature: '', contractDisclaimer: '',
+};
+
 interface CRMState {
   owners: Owner[];
   properties: Property[];
@@ -12,6 +26,7 @@ interface CRMState {
   communications: Communication[];
   users: CRMUser[];
   currentUser: CRMUser;
+  companyInfo: CompanyInfo;
 }
 
 interface CRMActions {
@@ -24,6 +39,7 @@ interface CRMActions {
   getOwner: (id: string) => Owner | undefined;
   getProperty: (id: string) => Property | undefined;
   getLead: (id: string) => Lead | undefined;
+  updateCompanyInfo: (info: CompanyInfo) => void;
 }
 
 const CRMContext = createContext<(CRMState & CRMActions) | null>(null);
