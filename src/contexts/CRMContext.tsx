@@ -74,8 +74,8 @@ export function CRMProvider({ children }: { children: ReactNode }) {
 
   return (
     <CRMContext.Provider value={{
-      owners, properties, leads, tasks, campaigns, buyers, communications, users, currentUser,
-      updateLeadStage, updateTaskStatus, addLead, addTask, addOwner, addProperty, getOwner, getProperty, getLead,
+      owners, properties, leads, tasks, campaigns, buyers, communications, users, currentUser, companyInfo,
+      updateLeadStage, updateTaskStatus, addLead, addTask, addOwner, addProperty, getOwner, getProperty, getLead, updateCompanyInfo,
     }}>
       {children}
     </CRMContext.Provider>

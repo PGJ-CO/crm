@@ -30,11 +30,15 @@ const App = () => (
           <Routes>
             <Route element={<AppLayout />}>
               <Route path="/" element={<Dashboard />} />
+              <Route path="/inbox" element={<LeadsInbox />} />
               <Route path="/leads" element={<Leads />} />
               <Route path="/properties" element={<Properties />} />
               <Route path="/campaigns" element={<Campaigns />} />
+              <Route path="/automations" element={<Automations />} />
               <Route path="/tasks" element={<Tasks />} />
+              <Route path="/documents" element={<Documents />} />
               <Route path="/buyers" element={<Buyers />} />
+              <Route path="/company" element={<CompanyInfo />} />
               <Route path="/settings" element={<SettingsPage />} />
             </Route>
             <Route path="*" element={<NotFound />} />
