@@ -8,7 +8,7 @@ import {
   Plus, Trash2, Upload, FileText, X, Loader2, ChevronDown, ChevronUp, Users,
 } from "lucide-react";
 import { BatchContractorEntry, CompanyInfo, LineItem, createEmptyBatchEntry } from "@/types/contract";
-import DocumentUpload from "@/components/DocumentUpload";
+import DocumentUpload from "./DocumentUpload";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 

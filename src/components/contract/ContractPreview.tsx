@@ -1,8 +1,8 @@
 import { ContractData } from "@/types/contract";
 import { Button } from "@/components/ui/button";
 import { Printer, ArrowLeft } from "lucide-react";
-import ContractBody from "./contract/ContractBody";
-import ContractSignatures from "./contract/ContractSignatures";
+import ContractBody from "./ContractBody";
+import ContractSignatures from "./ContractSignatures";
 
 interface Props {
   data: ContractData;

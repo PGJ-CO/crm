@@ -8,9 +8,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { FileText, ArrowRight, ArrowLeft, Loader2 } from "lucide-react";
-import DocumentUpload from "@/components/DocumentUpload";
-import AddressAutocomplete from "@/components/AddressAutocomplete";
-import BatchContractorPanel from "@/components/BatchContractorPanel";
+import DocumentUpload from "./DocumentUpload";
+import AddressAutocomplete from "./AddressAutocomplete";
+import BatchContractorPanel from "./BatchContractorPanel";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
