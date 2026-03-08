@@ -19,6 +19,7 @@ export default function Leads() {
   const [search, setSearch] = useState('');
   const [filterSource, setFilterSource] = useState<string>('all');
   const [addDialogOpen, setAddDialogOpen] = useState(false);
+  const [importDialogOpen, setImportDialogOpen] = useState(false);
 
   const filteredLeads = useMemo(() => {
     return leads.filter(l => {
