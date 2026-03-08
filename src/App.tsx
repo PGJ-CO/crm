@@ -6,11 +6,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CRMProvider } from "@/contexts/CRMContext";
 import { AppLayout } from "@/components/layout/AppLayout";
 import Dashboard from "./pages/Dashboard";
+import LeadsInbox from "./pages/LeadsInbox";
 import Leads from "./pages/Leads";
 import Properties from "./pages/Properties";
 import Campaigns from "./pages/Campaigns";
+import Automations from "./pages/Automations";
 import Tasks from "./pages/Tasks";
+import Documents from "./pages/Documents";
 import Buyers from "./pages/Buyers";
+import CompanyInfo from "./pages/CompanyInfo";
 import SettingsPage from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
