@@ -18,6 +18,7 @@ const mainNav = [
   { title: 'Automations', url: '/automations', icon: Zap },
   { title: 'Tasks', url: '/tasks', icon: CheckSquare },
   { title: 'Documents', url: '/documents', icon: FileText },
+  { title: 'Vendors', url: '/vendors', icon: HardHat },
   { title: 'Buyers', url: '/buyers', icon: UserCheck },
 ];
 
