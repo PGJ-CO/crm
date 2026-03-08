@@ -6,9 +6,10 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { Search, Plus, List, Columns, Filter, ChevronRight, Phone, MessageSquare, Clock } from 'lucide-react';
+import { Search, Plus, List, Columns, Filter, ChevronRight, Phone, MessageSquare, Clock, Upload } from 'lucide-react';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import CSVImportDialog from '@/components/leads/CSVImportDialog';
 
 type ViewMode = 'kanban' | 'list';
 
