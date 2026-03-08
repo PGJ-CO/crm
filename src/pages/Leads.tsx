@@ -50,6 +50,9 @@ export default function Leads() {
           <p className="crm-page-subtitle">{leads.length} total leads · {leads.filter(l => l.stage !== 'dead_dnc' && l.stage !== 'closed_won').length} active</p>
         </div>
         <div className="flex gap-2">
+          <Button size="sm" variant="outline" onClick={() => setImportDialogOpen(true)}>
+            <Upload className="mr-1 h-3 w-3" /> Import CSV
+          </Button>
           <Dialog open={addDialogOpen} onOpenChange={setAddDialogOpen}>
             <DialogTrigger asChild>
               <Button size="sm"><Plus className="mr-1 h-3 w-3" /> Add Lead</Button>
@@ -61,6 +64,7 @@ export default function Leads() {
               <QuickAddForm onClose={() => setAddDialogOpen(false)} />
             </DialogContent>
           </Dialog>
+          <CSVImportDialog open={importDialogOpen} onOpenChange={setImportDialogOpen} />
         </div>
       </div>
 
