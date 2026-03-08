@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useCRM } from '@/contexts/CRMContext';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
