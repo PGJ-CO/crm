@@ -57,7 +57,7 @@ export default function Tasks() {
                 onClick={() => updateTaskStatus(task.id, 'snoozed')}
                 className="shrink-0"
               >
-                <Snooze className="h-3 w-3" />
+                <AlarmClock className="h-3 w-3" />
               </Button>
             </div>
           );
