@@ -1,6 +1,6 @@
 import {
   LayoutDashboard, Users, Building2, Megaphone, CheckSquare, UserCheck, Settings, Search,
-  Inbox, Zap, FileText, Building, HardHat,
+  Inbox, Zap, FileText, Building, HardHat, Map, Target, UserSearch, Crosshair,
 } from 'lucide-react';
 import { NavLink } from '@/components/NavLink';
 import { useLocation } from 'react-router-dom';
@@ -20,6 +20,13 @@ const mainNav = [
   { title: 'Documents', url: '/documents', icon: FileText },
   { title: 'Vendors', url: '/vendors', icon: HardHat },
   { title: 'Buyers', url: '/buyers', icon: UserCheck },
+];
+
+const intelligenceNav = [
+  { title: 'Lead Finder', url: '/lead-finder', icon: Search },
+  { title: 'Heat Maps', url: '/heat-map', icon: Map },
+  { title: 'Deal Score', url: '/deal-score', icon: Target },
+  { title: 'Skip Trace', url: '/skip-trace', icon: Crosshair },
 ];
 
 const bottomNav = [
@@ -64,6 +71,28 @@ export function AppSidebar() {
                     <NavLink
                       to={item.url}
                       end={item.url === '/'}
+                      className="hover:bg-sidebar-accent/50"
+                      activeClassName="bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                    >
+                      <item.icon className="mr-2 h-4 w-4" />
+                      {!collapsed && <span>{item.title}</span>}
+                    </NavLink>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        <SidebarGroup>
+          <SidebarGroupLabel>Intelligence</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {intelligenceNav.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <NavLink
+                      to={item.url}
                       className="hover:bg-sidebar-accent/50"
                       activeClassName="bg-sidebar-accent text-sidebar-accent-foreground font-medium"
                     >
