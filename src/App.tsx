@@ -19,6 +19,11 @@ import CompanyInfo from "./pages/CompanyInfo";
 import PropertyDetail from "./pages/PropertyDetail";
 import Contracts from "./pages/Contracts";
 import SettingsPage from "./pages/Settings";
+import LeadFinder from "./pages/LeadFinder";
+import PropertySnapshot from "./pages/PropertySnapshot";
+import SkipTrace from "./pages/SkipTrace";
+import HeatMap from "./pages/HeatMap";
+import DealScore from "./pages/DealScore";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,6 +51,11 @@ const App = () => (
               <Route path="/properties/:id" element={<PropertyDetail />} />
               <Route path="/contracts" element={<Contracts />} />
               <Route path="/settings" element={<SettingsPage />} />
+              <Route path="/lead-finder" element={<LeadFinder />} />
+              <Route path="/property-snapshot/:id" element={<PropertySnapshot />} />
+              <Route path="/skip-trace" element={<SkipTrace />} />
+              <Route path="/heat-map" element={<HeatMap />} />
+              <Route path="/deal-score" element={<DealScore />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

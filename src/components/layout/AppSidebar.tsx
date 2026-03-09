@@ -1,6 +1,6 @@
 import {
   LayoutDashboard, Users, Building2, Megaphone, CheckSquare, UserCheck, Settings, Search,
-  Inbox, Zap, FileText, Building, HardHat,
+  Inbox, Zap, FileText, Building, HardHat, Map, Target, UserSearch, Crosshair,
 } from 'lucide-react';
 import { NavLink } from '@/components/NavLink';
 import { useLocation } from 'react-router-dom';
@@ -20,6 +20,13 @@ const mainNav = [
   { title: 'Documents', url: '/documents', icon: FileText },
   { title: 'Vendors', url: '/vendors', icon: HardHat },
   { title: 'Buyers', url: '/buyers', icon: UserCheck },
+];
+
+const intelligenceNav = [
+  { title: 'Lead Finder', url: '/lead-finder', icon: Search },
+  { title: 'Heat Maps', url: '/heat-map', icon: Map },
+  { title: 'Deal Score', url: '/deal-score', icon: Target },
+  { title: 'Skip Trace', url: '/skip-trace', icon: Crosshair },
 ];
 
 const bottomNav = [
