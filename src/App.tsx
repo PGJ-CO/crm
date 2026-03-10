@@ -24,6 +24,10 @@ import PropertySnapshot from "./pages/PropertySnapshot";
 import SkipTrace from "./pages/SkipTrace";
 import HeatMap from "./pages/HeatMap";
 import DealScore from "./pages/DealScore";
+import Foreclosures from "./pages/Foreclosures";
+import MarketTrends from "./pages/MarketTrends";
+import NeighborhoodAnalysis from "./pages/NeighborhoodAnalysis";
+import PublicRecords from "./pages/PublicRecords";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -56,6 +60,10 @@ const App = () => (
               <Route path="/skip-trace" element={<SkipTrace />} />
               <Route path="/heat-map" element={<HeatMap />} />
               <Route path="/deal-score" element={<DealScore />} />
+              <Route path="/foreclosures" element={<Foreclosures />} />
+              <Route path="/market-trends" element={<MarketTrends />} />
+              <Route path="/neighborhood" element={<NeighborhoodAnalysis />} />
+              <Route path="/public-records" element={<PublicRecords />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
