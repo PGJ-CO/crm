@@ -14,6 +14,151 @@ export type Database = {
   }
   public: {
     Tables: {
+      building_permits: {
+        Row: {
+          address: string
+          contractor_name: string | null
+          created_at: string
+          id: string
+          issue_date: string | null
+          permit_date: string | null
+          permit_number: string | null
+          permit_type: string | null
+          property_snapshot_id: string | null
+          raw_data: Json | null
+          status: string | null
+          valuation_amount: number | null
+          work_description: string | null
+        }
+        Insert: {
+          address: string
+          contractor_name?: string | null
+          created_at?: string
+          id?: string
+          issue_date?: string | null
+          permit_date?: string | null
+          permit_number?: string | null
+          permit_type?: string | null
+          property_snapshot_id?: string | null
+          raw_data?: Json | null
+          status?: string | null
+          valuation_amount?: number | null
+          work_description?: string | null
+        }
+        Update: {
+          address?: string
+          contractor_name?: string | null
+          created_at?: string
+          id?: string
+          issue_date?: string | null
+          permit_date?: string | null
+          permit_number?: string | null
+          permit_type?: string | null
+          property_snapshot_id?: string | null
+          raw_data?: Json | null
+          status?: string | null
+          valuation_amount?: number | null
+          work_description?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "building_permits_property_snapshot_id_fkey"
+            columns: ["property_snapshot_id"]
+            isOneToOne: false
+            referencedRelation: "property_snapshots"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      code_violations: {
+        Row: {
+          address: string
+          case_number: string | null
+          created_at: string
+          description: string | null
+          id: string
+          property_snapshot_id: string | null
+          raw_data: Json | null
+          status: string | null
+          violation_date: string | null
+          violation_type: string | null
+        }
+        Insert: {
+          address: string
+          case_number?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          property_snapshot_id?: string | null
+          raw_data?: Json | null
+          status?: string | null
+          violation_date?: string | null
+          violation_type?: string | null
+        }
+        Update: {
+          address?: string
+          case_number?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          property_snapshot_id?: string | null
+          raw_data?: Json | null
+          status?: string | null
+          violation_date?: string | null
+          violation_type?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "code_violations_property_snapshot_id_fkey"
+            columns: ["property_snapshot_id"]
+            isOneToOne: false
+            referencedRelation: "property_snapshots"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      crime_data: {
+        Row: {
+          address: string | null
+          created_at: string
+          crime_type: string | null
+          id: string
+          incident_date: string | null
+          lat: number | null
+          lng: number | null
+          neighborhood: string | null
+          offense_category: string | null
+          raw_data: Json | null
+          zip_code: string | null
+        }
+        Insert: {
+          address?: string | null
+          created_at?: string
+          crime_type?: string | null
+          id?: string
+          incident_date?: string | null
+          lat?: number | null
+          lng?: number | null
+          neighborhood?: string | null
+          offense_category?: string | null
+          raw_data?: Json | null
+          zip_code?: string | null
+        }
+        Update: {
+          address?: string | null
+          created_at?: string
+          crime_type?: string | null
+          id?: string
+          incident_date?: string | null
+          lat?: number | null
+          lng?: number | null
+          neighborhood?: string | null
+          offense_category?: string | null
+          raw_data?: Json | null
+          zip_code?: string | null
+        }
+        Relationships: []
+      }
       deal_scores: {
         Row: {
           created_at: string
@@ -51,6 +196,208 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: "deal_scores_property_snapshot_id_fkey"
+            columns: ["property_snapshot_id"]
+            isOneToOne: false
+            referencedRelation: "property_snapshots"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      demographics: {
+        Row: {
+          created_at: string
+          education_bachelors_pct: number | null
+          employment_rate: number | null
+          housing_occupancy_rate: number | null
+          id: string
+          median_age: number | null
+          median_income: number | null
+          median_rent: number | null
+          population: number | null
+          poverty_rate: number | null
+          raw_data: Json | null
+          year: number
+          zip_code: string
+        }
+        Insert: {
+          created_at?: string
+          education_bachelors_pct?: number | null
+          employment_rate?: number | null
+          housing_occupancy_rate?: number | null
+          id?: string
+          median_age?: number | null
+          median_income?: number | null
+          median_rent?: number | null
+          population?: number | null
+          poverty_rate?: number | null
+          raw_data?: Json | null
+          year: number
+          zip_code: string
+        }
+        Update: {
+          created_at?: string
+          education_bachelors_pct?: number | null
+          employment_rate?: number | null
+          housing_occupancy_rate?: number | null
+          id?: string
+          median_age?: number | null
+          median_income?: number | null
+          median_rent?: number | null
+          population?: number | null
+          poverty_rate?: number | null
+          raw_data?: Json | null
+          year?: number
+          zip_code?: string
+        }
+        Relationships: []
+      }
+      evictions: {
+        Row: {
+          address: string
+          case_number: string | null
+          created_at: string
+          defendant: string | null
+          filing_date: string | null
+          id: string
+          judgment_amount: number | null
+          plaintiff: string | null
+          property_snapshot_id: string | null
+          raw_data: Json | null
+          status: string | null
+        }
+        Insert: {
+          address: string
+          case_number?: string | null
+          created_at?: string
+          defendant?: string | null
+          filing_date?: string | null
+          id?: string
+          judgment_amount?: number | null
+          plaintiff?: string | null
+          property_snapshot_id?: string | null
+          raw_data?: Json | null
+          status?: string | null
+        }
+        Update: {
+          address?: string
+          case_number?: string | null
+          created_at?: string
+          defendant?: string | null
+          filing_date?: string | null
+          id?: string
+          judgment_amount?: number | null
+          plaintiff?: string | null
+          property_snapshot_id?: string | null
+          raw_data?: Json | null
+          status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "evictions_property_snapshot_id_fkey"
+            columns: ["property_snapshot_id"]
+            isOneToOne: false
+            referencedRelation: "property_snapshots"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      foreclosure_stats: {
+        Row: {
+          created_at: string
+          id: string
+          mom_change: number | null
+          month: string
+          new_starts: number | null
+          raw_data: Json | null
+          releases: number | null
+          source: string | null
+          total_activity: number | null
+          yoy_change: number | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          mom_change?: number | null
+          month: string
+          new_starts?: number | null
+          raw_data?: Json | null
+          releases?: number | null
+          source?: string | null
+          total_activity?: number | null
+          yoy_change?: number | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          mom_change?: number | null
+          month?: string
+          new_starts?: number | null
+          raw_data?: Json | null
+          releases?: number | null
+          source?: string | null
+          total_activity?: number | null
+          yoy_change?: number | null
+        }
+        Relationships: []
+      }
+      foreclosures: {
+        Row: {
+          address: string
+          case_number: string | null
+          created_at: string
+          estimated_arv: number | null
+          id: string
+          legal_description: string | null
+          opening_bid: number | null
+          opportunity_score: number | null
+          property_snapshot_id: string | null
+          property_type: string | null
+          raw_data: Json | null
+          sale_date: string | null
+          sale_time: string | null
+          source: string | null
+          status: string | null
+          updated_at: string
+        }
+        Insert: {
+          address: string
+          case_number?: string | null
+          created_at?: string
+          estimated_arv?: number | null
+          id?: string
+          legal_description?: string | null
+          opening_bid?: number | null
+          opportunity_score?: number | null
+          property_snapshot_id?: string | null
+          property_type?: string | null
+          raw_data?: Json | null
+          sale_date?: string | null
+          sale_time?: string | null
+          source?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Update: {
+          address?: string
+          case_number?: string | null
+          created_at?: string
+          estimated_arv?: number | null
+          id?: string
+          legal_description?: string | null
+          opening_bid?: number | null
+          opportunity_score?: number | null
+          property_snapshot_id?: string | null
+          property_type?: string | null
+          raw_data?: Json | null
+          sale_date?: string | null
+          sale_time?: string | null
+          source?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "foreclosures_property_snapshot_id_fkey"
             columns: ["property_snapshot_id"]
             isOneToOne: false
             referencedRelation: "property_snapshots"
@@ -197,6 +544,57 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      market_trends: {
+        Row: {
+          created_at: string
+          days_on_market: number | null
+          homes_sold: number | null
+          id: string
+          inventory: number | null
+          median_sale_price: number | null
+          mom_change: number | null
+          month: string
+          new_listings: number | null
+          price_per_sqft: number | null
+          raw_data: Json | null
+          source: string | null
+          yoy_change: number | null
+          zip_code: string
+        }
+        Insert: {
+          created_at?: string
+          days_on_market?: number | null
+          homes_sold?: number | null
+          id?: string
+          inventory?: number | null
+          median_sale_price?: number | null
+          mom_change?: number | null
+          month: string
+          new_listings?: number | null
+          price_per_sqft?: number | null
+          raw_data?: Json | null
+          source?: string | null
+          yoy_change?: number | null
+          zip_code: string
+        }
+        Update: {
+          created_at?: string
+          days_on_market?: number | null
+          homes_sold?: number | null
+          id?: string
+          inventory?: number | null
+          median_sale_price?: number | null
+          mom_change?: number | null
+          month?: string
+          new_listings?: number | null
+          price_per_sqft?: number | null
+          raw_data?: Json | null
+          source?: string | null
+          yoy_change?: number | null
+          zip_code?: string
+        }
+        Relationships: []
       }
       property_snapshots: {
         Row: {
@@ -366,6 +764,59 @@ export type Database = {
         }
         Relationships: []
       }
+      rental_licenses: {
+        Row: {
+          address: string
+          created_at: string
+          expiration_date: string | null
+          id: string
+          issue_date: string | null
+          license_number: string | null
+          license_type: string | null
+          num_units: number | null
+          owner_name: string | null
+          property_snapshot_id: string | null
+          raw_data: Json | null
+          status: string | null
+        }
+        Insert: {
+          address: string
+          created_at?: string
+          expiration_date?: string | null
+          id?: string
+          issue_date?: string | null
+          license_number?: string | null
+          license_type?: string | null
+          num_units?: number | null
+          owner_name?: string | null
+          property_snapshot_id?: string | null
+          raw_data?: Json | null
+          status?: string | null
+        }
+        Update: {
+          address?: string
+          created_at?: string
+          expiration_date?: string | null
+          id?: string
+          issue_date?: string | null
+          license_number?: string | null
+          license_type?: string | null
+          num_units?: number | null
+          owner_name?: string | null
+          property_snapshot_id?: string | null
+          raw_data?: Json | null
+          status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "rental_licenses_property_snapshot_id_fkey"
+            columns: ["property_snapshot_id"]
+            isOneToOne: false
+            referencedRelation: "property_snapshots"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       repair_estimates: {
         Row: {
           arv: number | null
@@ -488,6 +939,57 @@ export type Database = {
         }
         Relationships: []
       }
+      schools: {
+        Row: {
+          address: string | null
+          created_at: string
+          enrollment: number | null
+          id: string
+          lat: number | null
+          lng: number | null
+          name: string
+          rating: number | null
+          raw_data: Json | null
+          school_type: string | null
+          student_teacher_ratio: number | null
+          test_scores: number | null
+          updated_at: string
+          zip_code: string | null
+        }
+        Insert: {
+          address?: string | null
+          created_at?: string
+          enrollment?: number | null
+          id?: string
+          lat?: number | null
+          lng?: number | null
+          name: string
+          rating?: number | null
+          raw_data?: Json | null
+          school_type?: string | null
+          student_teacher_ratio?: number | null
+          test_scores?: number | null
+          updated_at?: string
+          zip_code?: string | null
+        }
+        Update: {
+          address?: string | null
+          created_at?: string
+          enrollment?: number | null
+          id?: string
+          lat?: number | null
+          lng?: number | null
+          name?: string
+          rating?: number | null
+          raw_data?: Json | null
+          school_type?: string | null
+          student_teacher_ratio?: number | null
+          test_scores?: number | null
+          updated_at?: string
+          zip_code?: string | null
+        }
+        Relationships: []
+      }
       skip_trace_results: {
         Row: {
           associates: Json | null
@@ -543,6 +1045,59 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: "skip_trace_results_property_snapshot_id_fkey"
+            columns: ["property_snapshot_id"]
+            isOneToOne: false
+            referencedRelation: "property_snapshots"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      tax_delinquencies: {
+        Row: {
+          address: string
+          amount_owed: number | null
+          created_at: string
+          id: string
+          lien_status: string | null
+          parcel_number: string | null
+          penalty_interest: number | null
+          property_snapshot_id: string | null
+          raw_data: Json | null
+          tax_year: number | null
+          total_due: number | null
+          updated_at: string
+        }
+        Insert: {
+          address: string
+          amount_owed?: number | null
+          created_at?: string
+          id?: string
+          lien_status?: string | null
+          parcel_number?: string | null
+          penalty_interest?: number | null
+          property_snapshot_id?: string | null
+          raw_data?: Json | null
+          tax_year?: number | null
+          total_due?: number | null
+          updated_at?: string
+        }
+        Update: {
+          address?: string
+          amount_owed?: number | null
+          created_at?: string
+          id?: string
+          lien_status?: string | null
+          parcel_number?: string | null
+          penalty_interest?: number | null
+          property_snapshot_id?: string | null
+          raw_data?: Json | null
+          tax_year?: number | null
+          total_due?: number | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "tax_delinquencies_property_snapshot_id_fkey"
             columns: ["property_snapshot_id"]
             isOneToOne: false
             referencedRelation: "property_snapshots"
