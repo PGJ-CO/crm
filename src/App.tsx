@@ -24,6 +24,10 @@ import PropertySnapshot from "./pages/PropertySnapshot";
 import SkipTrace from "./pages/SkipTrace";
 import HeatMap from "./pages/HeatMap";
 import DealScore from "./pages/DealScore";
+import Foreclosures from "./pages/Foreclosures";
+import MarketTrends from "./pages/MarketTrends";
+import NeighborhoodAnalysis from "./pages/NeighborhoodAnalysis";
+import PublicRecords from "./pages/PublicRecords";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
