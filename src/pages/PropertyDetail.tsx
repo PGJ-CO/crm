@@ -4,9 +4,10 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { PropertyLookup } from '@/components/property/PropertyLookup';
 import {
   ArrowLeft, Building2, HardHat, FileText, MessageSquare, DollarSign,
-  Phone, Mail, MapPin, Calendar, User, PenTool, Scale,
+  Phone, Mail, MapPin, Calendar, User, PenTool, Scale, Search,
 } from 'lucide-react';
 
 // Stub contractor assignments for demo
@@ -101,13 +102,29 @@ export default function PropertyDetail() {
         </Card>
       </div>
 
-      <Tabs defaultValue="contractors" className="space-y-4">
+      <Tabs defaultValue="lookup" className="space-y-4">
         <TabsList>
+          <TabsTrigger value="lookup">Property Lookup</TabsTrigger>
           <TabsTrigger value="contractors">Contractors</TabsTrigger>
           <TabsTrigger value="estimates">Estimates & W9s</TabsTrigger>
           <TabsTrigger value="comms">Communications</TabsTrigger>
           <TabsTrigger value="documents">Documents</TabsTrigger>
         </TabsList>
+
+        {/* Property Lookup Tab */}
+        <TabsContent value="lookup">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base flex items-center gap-2">
+                <Search className="h-4 w-4" /> Property Lookup
+              </CardTitle>
+              <CardDescription>Look up detailed property information by address</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <PropertyLookup defaultAddress={`${property.address}, ${property.city}, ${property.state} ${property.zip}`} />
+            </CardContent>
+          </Card>
+        </TabsContent>
 
         {/* Contractors Tab */}
         <TabsContent value="contractors">
