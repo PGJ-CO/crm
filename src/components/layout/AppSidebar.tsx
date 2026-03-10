@@ -28,6 +28,10 @@ const intelligenceNav = [
   { title: 'Heat Maps', url: '/heat-map', icon: Map },
   { title: 'Deal Score', url: '/deal-score', icon: Target },
   { title: 'Skip Trace', url: '/skip-trace', icon: Crosshair },
+  { title: 'Foreclosures', url: '/foreclosures', icon: Gavel },
+  { title: 'Market Trends', url: '/market-trends', icon: BarChart3 },
+  { title: 'Neighborhood', url: '/neighborhood', icon: MapPin },
+  { title: 'Public Records', url: '/public-records', icon: FileSearch },
 ];
 
 const bottomNav = [

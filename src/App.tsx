@@ -60,6 +60,10 @@ const App = () => (
               <Route path="/skip-trace" element={<SkipTrace />} />
               <Route path="/heat-map" element={<HeatMap />} />
               <Route path="/deal-score" element={<DealScore />} />
+              <Route path="/foreclosures" element={<Foreclosures />} />
+              <Route path="/market-trends" element={<MarketTrends />} />
+              <Route path="/neighborhood" element={<NeighborhoodAnalysis />} />
+              <Route path="/public-records" element={<PublicRecords />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
