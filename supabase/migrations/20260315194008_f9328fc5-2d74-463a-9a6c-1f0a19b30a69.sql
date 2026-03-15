@@ -1,0 +1,1 @@
+ALTER TABLE public.demographics ADD CONSTRAINT demographics_zip_code_year_key UNIQUE (zip_code, year);
