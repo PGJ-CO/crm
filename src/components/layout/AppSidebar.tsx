@@ -1,7 +1,7 @@
 import {
   LayoutDashboard, Users, Building2, Megaphone, CheckSquare, UserCheck, Settings, Search,
   Inbox, Zap, FileText, Building, HardHat, Map, Target, UserSearch, Crosshair,
-  Gavel, BarChart3, MapPin, FileSearch,
+  Gavel, BarChart3, MapPin, FileSearch, BoxSelect,
 } from 'lucide-react';
 import { NavLink } from '@/components/NavLink';
 import { useLocation } from 'react-router-dom';
@@ -32,6 +32,7 @@ const intelligenceNav = [
   { title: 'Market Trends', url: '/market-trends', icon: BarChart3 },
   { title: 'Neighborhood', url: '/neighborhood', icon: MapPin },
   { title: 'Public Records', url: '/public-records', icon: FileSearch },
+  { title: 'Buy Box', url: '/buy-box', icon: BoxSelect },
 ];
 
 const bottomNav = [
