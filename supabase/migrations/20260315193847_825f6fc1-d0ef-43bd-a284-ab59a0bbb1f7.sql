@@ -1,0 +1,1 @@
+ALTER TABLE public.building_permits ADD CONSTRAINT building_permits_permit_number_key UNIQUE (permit_number);
