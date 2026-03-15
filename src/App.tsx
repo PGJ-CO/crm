@@ -30,6 +30,7 @@ import NeighborhoodAnalysis from "./pages/NeighborhoodAnalysis";
 import PublicRecords from "./pages/PublicRecords";
 import BuyBox from "./pages/BuyBox";
 import DealFinder from "./pages/DealFinder";
+import MarketIntelligence from "./pages/MarketIntelligence";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
