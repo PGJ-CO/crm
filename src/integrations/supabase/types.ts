@@ -661,6 +661,74 @@ export type Database = {
           },
         ]
       }
+      flip_project_outcomes: {
+        Row: {
+          arv_projection: number | null
+          city: string | null
+          created_at: string
+          hold_time_days: number | null
+          id: string
+          margin_pct: number | null
+          neighborhood: string | null
+          notes: string | null
+          profit: number | null
+          property_snapshot_id: string | null
+          purchase_price: number | null
+          rehab_cost: number | null
+          resale_price: number | null
+          state: string | null
+          strategy_used: string | null
+          success_flag: boolean | null
+          zip: string | null
+        }
+        Insert: {
+          arv_projection?: number | null
+          city?: string | null
+          created_at?: string
+          hold_time_days?: number | null
+          id?: string
+          margin_pct?: number | null
+          neighborhood?: string | null
+          notes?: string | null
+          profit?: number | null
+          property_snapshot_id?: string | null
+          purchase_price?: number | null
+          rehab_cost?: number | null
+          resale_price?: number | null
+          state?: string | null
+          strategy_used?: string | null
+          success_flag?: boolean | null
+          zip?: string | null
+        }
+        Update: {
+          arv_projection?: number | null
+          city?: string | null
+          created_at?: string
+          hold_time_days?: number | null
+          id?: string
+          margin_pct?: number | null
+          neighborhood?: string | null
+          notes?: string | null
+          profit?: number | null
+          property_snapshot_id?: string | null
+          purchase_price?: number | null
+          rehab_cost?: number | null
+          resale_price?: number | null
+          state?: string | null
+          strategy_used?: string | null
+          success_flag?: boolean | null
+          zip?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "flip_project_outcomes_property_snapshot_id_fkey"
+            columns: ["property_snapshot_id"]
+            isOneToOne: false
+            referencedRelation: "property_snapshots"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       foreclosure_stats: {
         Row: {
           created_at: string
@@ -905,6 +973,140 @@ export type Database = {
           },
         ]
       }
+      market_comp_data: {
+        Row: {
+          address: string | null
+          baths: number | null
+          beds: number | null
+          city: string | null
+          created_at: string
+          days_on_market: number | null
+          id: string
+          neighborhood: string | null
+          price_per_sqft: number | null
+          property_snapshot_id: string | null
+          property_type: string | null
+          raw_data: Json | null
+          renovation_level: string | null
+          sale_date: string | null
+          sale_price: number | null
+          source: string | null
+          sqft: number | null
+          state: string | null
+          year_built: number | null
+          zip: string | null
+        }
+        Insert: {
+          address?: string | null
+          baths?: number | null
+          beds?: number | null
+          city?: string | null
+          created_at?: string
+          days_on_market?: number | null
+          id?: string
+          neighborhood?: string | null
+          price_per_sqft?: number | null
+          property_snapshot_id?: string | null
+          property_type?: string | null
+          raw_data?: Json | null
+          renovation_level?: string | null
+          sale_date?: string | null
+          sale_price?: number | null
+          source?: string | null
+          sqft?: number | null
+          state?: string | null
+          year_built?: number | null
+          zip?: string | null
+        }
+        Update: {
+          address?: string | null
+          baths?: number | null
+          beds?: number | null
+          city?: string | null
+          created_at?: string
+          days_on_market?: number | null
+          id?: string
+          neighborhood?: string | null
+          price_per_sqft?: number | null
+          property_snapshot_id?: string | null
+          property_type?: string | null
+          raw_data?: Json | null
+          renovation_level?: string | null
+          sale_date?: string | null
+          sale_price?: number | null
+          source?: string | null
+          sqft?: number | null
+          state?: string | null
+          year_built?: number | null
+          zip?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "market_comp_data_property_snapshot_id_fkey"
+            columns: ["property_snapshot_id"]
+            isOneToOne: false
+            referencedRelation: "property_snapshots"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      market_rental_data: {
+        Row: {
+          address: string | null
+          baths: number | null
+          beds: number | null
+          city: string | null
+          created_at: string
+          id: string
+          lease_date: string | null
+          neighborhood: string | null
+          property_type: string | null
+          raw_data: Json | null
+          rent: number | null
+          rent_price_per_sqft: number | null
+          source: string | null
+          sqft: number | null
+          state: string | null
+          zip: string | null
+        }
+        Insert: {
+          address?: string | null
+          baths?: number | null
+          beds?: number | null
+          city?: string | null
+          created_at?: string
+          id?: string
+          lease_date?: string | null
+          neighborhood?: string | null
+          property_type?: string | null
+          raw_data?: Json | null
+          rent?: number | null
+          rent_price_per_sqft?: number | null
+          source?: string | null
+          sqft?: number | null
+          state?: string | null
+          zip?: string | null
+        }
+        Update: {
+          address?: string | null
+          baths?: number | null
+          beds?: number | null
+          city?: string | null
+          created_at?: string
+          id?: string
+          lease_date?: string | null
+          neighborhood?: string | null
+          property_type?: string | null
+          raw_data?: Json | null
+          rent?: number | null
+          rent_price_per_sqft?: number | null
+          source?: string | null
+          sqft?: number | null
+          state?: string | null
+          zip?: string | null
+        }
+        Relationships: []
+      }
       market_trends: {
         Row: {
           created_at: string
@@ -953,6 +1155,102 @@ export type Database = {
           source?: string | null
           yoy_change?: number | null
           zip_code?: string
+        }
+        Relationships: []
+      }
+      neighborhood_market_metrics: {
+        Row: {
+          arv_ceiling_ppsf: number | null
+          arv_ceiling_price: number | null
+          avg_days_on_market: number | null
+          avg_flip_margin_pct: number | null
+          avg_flip_profit: number | null
+          avg_price_per_sqft: number | null
+          avg_rehab_cost_per_sqft: number | null
+          city: string | null
+          created_at: string
+          data_points: number | null
+          flip_count: number | null
+          flip_success_rate: number | null
+          id: string
+          last_updated: string
+          median_price_per_sqft: number | null
+          median_sale_price: number | null
+          monthly_trend_pct: number | null
+          neighborhood: string | null
+          property_type: string | null
+          renovation_sensitivity_score: number | null
+          rent_price_per_sqft: number | null
+          rental_price_avg: number | null
+          rental_price_high: number | null
+          rental_price_low: number | null
+          school_district: string | null
+          state: string | null
+          strategy_bias: string | null
+          yearly_trend_pct: number | null
+          zip: string | null
+        }
+        Insert: {
+          arv_ceiling_ppsf?: number | null
+          arv_ceiling_price?: number | null
+          avg_days_on_market?: number | null
+          avg_flip_margin_pct?: number | null
+          avg_flip_profit?: number | null
+          avg_price_per_sqft?: number | null
+          avg_rehab_cost_per_sqft?: number | null
+          city?: string | null
+          created_at?: string
+          data_points?: number | null
+          flip_count?: number | null
+          flip_success_rate?: number | null
+          id?: string
+          last_updated?: string
+          median_price_per_sqft?: number | null
+          median_sale_price?: number | null
+          monthly_trend_pct?: number | null
+          neighborhood?: string | null
+          property_type?: string | null
+          renovation_sensitivity_score?: number | null
+          rent_price_per_sqft?: number | null
+          rental_price_avg?: number | null
+          rental_price_high?: number | null
+          rental_price_low?: number | null
+          school_district?: string | null
+          state?: string | null
+          strategy_bias?: string | null
+          yearly_trend_pct?: number | null
+          zip?: string | null
+        }
+        Update: {
+          arv_ceiling_ppsf?: number | null
+          arv_ceiling_price?: number | null
+          avg_days_on_market?: number | null
+          avg_flip_margin_pct?: number | null
+          avg_flip_profit?: number | null
+          avg_price_per_sqft?: number | null
+          avg_rehab_cost_per_sqft?: number | null
+          city?: string | null
+          created_at?: string
+          data_points?: number | null
+          flip_count?: number | null
+          flip_success_rate?: number | null
+          id?: string
+          last_updated?: string
+          median_price_per_sqft?: number | null
+          median_sale_price?: number | null
+          monthly_trend_pct?: number | null
+          neighborhood?: string | null
+          property_type?: string | null
+          renovation_sensitivity_score?: number | null
+          rent_price_per_sqft?: number | null
+          rental_price_avg?: number | null
+          rental_price_high?: number | null
+          rental_price_low?: number | null
+          school_district?: string | null
+          state?: string | null
+          strategy_bias?: string | null
+          yearly_trend_pct?: number | null
+          zip?: string | null
         }
         Relationships: []
       }
