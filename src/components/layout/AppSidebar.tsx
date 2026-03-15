@@ -1,7 +1,7 @@
 import {
   LayoutDashboard, Users, Building2, Megaphone, CheckSquare, UserCheck, Settings, Search,
   Inbox, Zap, FileText, Building, HardHat, Map, Target, UserSearch, Crosshair,
-  Gavel, BarChart3, MapPin, FileSearch, BoxSelect,
+  Gavel, BarChart3, MapPin, FileSearch, BoxSelect, Sparkles,
 } from 'lucide-react';
 import { NavLink } from '@/components/NavLink';
 import { useLocation } from 'react-router-dom';
@@ -24,6 +24,7 @@ const mainNav = [
 ];
 
 const intelligenceNav = [
+  { title: 'Deal Finder AI', url: '/deal-finder', icon: Sparkles },
   { title: 'Lead Finder', url: '/lead-finder', icon: Search },
   { title: 'Heat Maps', url: '/heat-map', icon: Map },
   { title: 'Deal Score', url: '/deal-score', icon: Target },

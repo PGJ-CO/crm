@@ -29,6 +29,7 @@ import MarketTrends from "./pages/MarketTrends";
 import NeighborhoodAnalysis from "./pages/NeighborhoodAnalysis";
 import PublicRecords from "./pages/PublicRecords";
 import BuyBox from "./pages/BuyBox";
+import DealFinder from "./pages/DealFinder";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -66,6 +67,7 @@ const App = () => (
               <Route path="/neighborhood" element={<NeighborhoodAnalysis />} />
               <Route path="/public-records" element={<PublicRecords />} />
               <Route path="/buy-box" element={<BuyBox />} />
+              <Route path="/deal-finder" element={<DealFinder />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
