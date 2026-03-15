@@ -30,6 +30,7 @@ import NeighborhoodAnalysis from "./pages/NeighborhoodAnalysis";
 import PublicRecords from "./pages/PublicRecords";
 import BuyBox from "./pages/BuyBox";
 import DealFinder from "./pages/DealFinder";
+import MarketIntelligence from "./pages/MarketIntelligence";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -68,6 +69,7 @@ const App = () => (
               <Route path="/public-records" element={<PublicRecords />} />
               <Route path="/buy-box" element={<BuyBox />} />
               <Route path="/deal-finder" element={<DealFinder />} />
+              <Route path="/market-intelligence" element={<MarketIntelligence />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
