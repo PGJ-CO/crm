@@ -414,6 +414,39 @@ export type Database = {
         }
         Relationships: []
       }
+      data_sync_log: {
+        Row: {
+          completed_at: string | null
+          error_message: string | null
+          id: string
+          records_failed: number | null
+          records_processed: number | null
+          started_at: string | null
+          status: string | null
+          sync_type: string
+        }
+        Insert: {
+          completed_at?: string | null
+          error_message?: string | null
+          id?: string
+          records_failed?: number | null
+          records_processed?: number | null
+          started_at?: string | null
+          status?: string | null
+          sync_type: string
+        }
+        Update: {
+          completed_at?: string | null
+          error_message?: string | null
+          id?: string
+          records_failed?: number | null
+          records_processed?: number | null
+          started_at?: string | null
+          status?: string | null
+          sync_type?: string
+        }
+        Relationships: []
+      }
       deal_finder_results: {
         Row: {
           arv_confidence_score: number | null
