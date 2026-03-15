@@ -32,6 +32,7 @@ const intelligenceNav = [
   { title: 'Market Trends', url: '/market-trends', icon: BarChart3 },
   { title: 'Neighborhood', url: '/neighborhood', icon: MapPin },
   { title: 'Public Records', url: '/public-records', icon: FileSearch },
+  { title: 'Buy Box', url: '/buy-box', icon: BoxSelect },
 ];
 
 const bottomNav = [
