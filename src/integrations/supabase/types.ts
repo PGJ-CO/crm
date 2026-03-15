@@ -70,6 +70,261 @@ export type Database = {
           },
         ]
       }
+      buy_box_match_results: {
+        Row: {
+          arv_score: number | null
+          buy_box_id: string
+          created_at: string
+          deal_margin_score: number | null
+          id: string
+          layout_score: number | null
+          lead_property_id: string | null
+          location_score: number | null
+          overall_match_score: number | null
+          pass_status: string | null
+          price_score: number | null
+          primary_failure_reason: string | null
+          primary_success_reason: string | null
+          property_snapshot_id: string | null
+          property_type_score: number | null
+          reason_failed_summary: string | null
+          reason_passed_summary: string | null
+          recommended_action: string | null
+          rehab_score: number | null
+          school_district_score: number | null
+          strategy_fit_score: number | null
+          strategy_type: string | null
+        }
+        Insert: {
+          arv_score?: number | null
+          buy_box_id: string
+          created_at?: string
+          deal_margin_score?: number | null
+          id?: string
+          layout_score?: number | null
+          lead_property_id?: string | null
+          location_score?: number | null
+          overall_match_score?: number | null
+          pass_status?: string | null
+          price_score?: number | null
+          primary_failure_reason?: string | null
+          primary_success_reason?: string | null
+          property_snapshot_id?: string | null
+          property_type_score?: number | null
+          reason_failed_summary?: string | null
+          reason_passed_summary?: string | null
+          recommended_action?: string | null
+          rehab_score?: number | null
+          school_district_score?: number | null
+          strategy_fit_score?: number | null
+          strategy_type?: string | null
+        }
+        Update: {
+          arv_score?: number | null
+          buy_box_id?: string
+          created_at?: string
+          deal_margin_score?: number | null
+          id?: string
+          layout_score?: number | null
+          lead_property_id?: string | null
+          location_score?: number | null
+          overall_match_score?: number | null
+          pass_status?: string | null
+          price_score?: number | null
+          primary_failure_reason?: string | null
+          primary_success_reason?: string | null
+          property_snapshot_id?: string | null
+          property_type_score?: number | null
+          reason_failed_summary?: string | null
+          reason_passed_summary?: string | null
+          recommended_action?: string | null
+          rehab_score?: number | null
+          school_district_score?: number | null
+          strategy_fit_score?: number | null
+          strategy_type?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "buy_box_match_results_buy_box_id_fkey"
+            columns: ["buy_box_id"]
+            isOneToOne: false
+            referencedRelation: "buy_boxes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "buy_box_match_results_property_snapshot_id_fkey"
+            columns: ["property_snapshot_id"]
+            isOneToOne: false
+            referencedRelation: "property_snapshots"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      buy_box_rule_results: {
+        Row: {
+          actual_value: string | null
+          buy_box_id: string
+          created_at: string
+          expected_value: string | null
+          explanation: string | null
+          fail_severity: string | null
+          id: string
+          lead_property_id: string | null
+          match_result_id: string
+          passed: boolean | null
+          rule_name: string
+        }
+        Insert: {
+          actual_value?: string | null
+          buy_box_id: string
+          created_at?: string
+          expected_value?: string | null
+          explanation?: string | null
+          fail_severity?: string | null
+          id?: string
+          lead_property_id?: string | null
+          match_result_id: string
+          passed?: boolean | null
+          rule_name: string
+        }
+        Update: {
+          actual_value?: string | null
+          buy_box_id?: string
+          created_at?: string
+          expected_value?: string | null
+          explanation?: string | null
+          fail_severity?: string | null
+          id?: string
+          lead_property_id?: string | null
+          match_result_id?: string
+          passed?: boolean | null
+          rule_name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "buy_box_rule_results_buy_box_id_fkey"
+            columns: ["buy_box_id"]
+            isOneToOne: false
+            referencedRelation: "buy_boxes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "buy_box_rule_results_match_result_id_fkey"
+            columns: ["match_result_id"]
+            isOneToOne: false
+            referencedRelation: "buy_box_match_results"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      buy_boxes: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          is_active: boolean | null
+          is_default: boolean | null
+          max_cash_left_in_deal: number | null
+          max_purchase_price: number | null
+          max_rehab_budget: number | null
+          max_sqft: number | null
+          min_arv: number | null
+          min_baths: number | null
+          min_beds: number | null
+          min_equity_spread: number | null
+          min_profit: number | null
+          min_profit_margin_pct: number | null
+          min_purchase_price: number | null
+          min_rent: number | null
+          min_rent_to_price_ratio: number | null
+          min_sqft: number | null
+          min_year_built: number | null
+          name: string
+          notes: string | null
+          preferred_condition_levels: string[] | null
+          preferred_finish_level: string | null
+          property_types_allowed: string[] | null
+          strategy_type: string
+          target_cities: string[] | null
+          target_hold_period_months: number | null
+          target_neighborhoods: string[] | null
+          target_school_districts: string[] | null
+          target_states: string[] | null
+          target_zip_codes: string[] | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean | null
+          is_default?: boolean | null
+          max_cash_left_in_deal?: number | null
+          max_purchase_price?: number | null
+          max_rehab_budget?: number | null
+          max_sqft?: number | null
+          min_arv?: number | null
+          min_baths?: number | null
+          min_beds?: number | null
+          min_equity_spread?: number | null
+          min_profit?: number | null
+          min_profit_margin_pct?: number | null
+          min_purchase_price?: number | null
+          min_rent?: number | null
+          min_rent_to_price_ratio?: number | null
+          min_sqft?: number | null
+          min_year_built?: number | null
+          name: string
+          notes?: string | null
+          preferred_condition_levels?: string[] | null
+          preferred_finish_level?: string | null
+          property_types_allowed?: string[] | null
+          strategy_type?: string
+          target_cities?: string[] | null
+          target_hold_period_months?: number | null
+          target_neighborhoods?: string[] | null
+          target_school_districts?: string[] | null
+          target_states?: string[] | null
+          target_zip_codes?: string[] | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean | null
+          is_default?: boolean | null
+          max_cash_left_in_deal?: number | null
+          max_purchase_price?: number | null
+          max_rehab_budget?: number | null
+          max_sqft?: number | null
+          min_arv?: number | null
+          min_baths?: number | null
+          min_beds?: number | null
+          min_equity_spread?: number | null
+          min_profit?: number | null
+          min_profit_margin_pct?: number | null
+          min_purchase_price?: number | null
+          min_rent?: number | null
+          min_rent_to_price_ratio?: number | null
+          min_sqft?: number | null
+          min_year_built?: number | null
+          name?: string
+          notes?: string | null
+          preferred_condition_levels?: string[] | null
+          preferred_finish_level?: string | null
+          property_types_allowed?: string[] | null
+          strategy_type?: string
+          target_cities?: string[] | null
+          target_hold_period_months?: number | null
+          target_neighborhoods?: string[] | null
+          target_school_districts?: string[] | null
+          target_states?: string[] | null
+          target_zip_codes?: string[] | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       code_violations: {
         Row: {
           address: string
