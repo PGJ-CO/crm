@@ -98,3 +98,25 @@ Deno.serve(async (req) => {
     );
   }
 });
+
+async function enrichWithPublicRecords(supabase: any, property: any) {
+  const addr = property.property_address || '';
+  const zip = property.zip || '';
+
+  const [permits, violations, demographics, taxDelinquencies, evictions] = await Promise.all([
+    supabase.from('building_permits').select('*').ilike('address', `%${addr}%`).limit(20),
+    supabase.from('code_violations').select('*').ilike('address', `%${addr}%`).limit(20),
+    supabase.from('demographics').select('*').eq('zip_code', zip).order('year', { ascending: false }).limit(1),
+    supabase.from('tax_delinquencies').select('*').ilike('address', `%${addr}%`).limit(10),
+    supabase.from('evictions').select('*').ilike('address', `%${addr}%`).limit(10),
+  ]);
+
+  return {
+    ...property,
+    permits: permits.data || [],
+    violations: violations.data || [],
+    demographics: demographics.data?.[0] || null,
+    tax_delinquencies: taxDelinquencies.data || [],
+    evictions: evictions.data || [],
+  };
+}
