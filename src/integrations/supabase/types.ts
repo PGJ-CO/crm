@@ -414,6 +414,111 @@ export type Database = {
         }
         Relationships: []
       }
+      deal_finder_results: {
+        Row: {
+          arv_confidence_score: number | null
+          buy_box_id: string | null
+          buy_box_match_score: number | null
+          created_at: string
+          deal_classification: string | null
+          deal_score: number | null
+          estimated_arv: number | null
+          estimated_arv_high: number | null
+          estimated_arv_low: number | null
+          estimated_cash_left_in_deal: number | null
+          estimated_flip_profit: number | null
+          estimated_rehab: number | null
+          estimated_rehab_high: number | null
+          estimated_rehab_low: number | null
+          estimated_rent: number | null
+          id: string
+          lead_property_id: string | null
+          max_allowable_offer: number | null
+          primary_strategy_fit: string | null
+          property_snapshot_id: string | null
+          recommended_action: string | null
+          rehab_risk_score: number | null
+          rejection_reason: string | null
+          scoring_breakdown: Json | null
+          secondary_strategy_fit: string | null
+          source: string | null
+          updated_at: string
+        }
+        Insert: {
+          arv_confidence_score?: number | null
+          buy_box_id?: string | null
+          buy_box_match_score?: number | null
+          created_at?: string
+          deal_classification?: string | null
+          deal_score?: number | null
+          estimated_arv?: number | null
+          estimated_arv_high?: number | null
+          estimated_arv_low?: number | null
+          estimated_cash_left_in_deal?: number | null
+          estimated_flip_profit?: number | null
+          estimated_rehab?: number | null
+          estimated_rehab_high?: number | null
+          estimated_rehab_low?: number | null
+          estimated_rent?: number | null
+          id?: string
+          lead_property_id?: string | null
+          max_allowable_offer?: number | null
+          primary_strategy_fit?: string | null
+          property_snapshot_id?: string | null
+          recommended_action?: string | null
+          rehab_risk_score?: number | null
+          rejection_reason?: string | null
+          scoring_breakdown?: Json | null
+          secondary_strategy_fit?: string | null
+          source?: string | null
+          updated_at?: string
+        }
+        Update: {
+          arv_confidence_score?: number | null
+          buy_box_id?: string | null
+          buy_box_match_score?: number | null
+          created_at?: string
+          deal_classification?: string | null
+          deal_score?: number | null
+          estimated_arv?: number | null
+          estimated_arv_high?: number | null
+          estimated_arv_low?: number | null
+          estimated_cash_left_in_deal?: number | null
+          estimated_flip_profit?: number | null
+          estimated_rehab?: number | null
+          estimated_rehab_high?: number | null
+          estimated_rehab_low?: number | null
+          estimated_rent?: number | null
+          id?: string
+          lead_property_id?: string | null
+          max_allowable_offer?: number | null
+          primary_strategy_fit?: string | null
+          property_snapshot_id?: string | null
+          recommended_action?: string | null
+          rehab_risk_score?: number | null
+          rejection_reason?: string | null
+          scoring_breakdown?: Json | null
+          secondary_strategy_fit?: string | null
+          source?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "deal_finder_results_buy_box_id_fkey"
+            columns: ["buy_box_id"]
+            isOneToOne: false
+            referencedRelation: "buy_boxes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "deal_finder_results_property_snapshot_id_fkey"
+            columns: ["property_snapshot_id"]
+            isOneToOne: false
+            referencedRelation: "property_snapshots"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       deal_scores: {
         Row: {
           created_at: string
