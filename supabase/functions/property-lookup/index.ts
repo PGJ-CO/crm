@@ -44,11 +44,12 @@ Deno.serve(async (req) => {
 
     if (cached) {
       console.log('Cache hit for:', normalizedAddress);
+      const enriched = await enrichWithPublicRecords(supabase, cached);
       return new Response(
         JSON.stringify({
           success: true,
           source: 'cache',
-          data: cached,
+          data: enriched,
           cached_at: cached.updated_at,
         }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -65,11 +66,12 @@ Deno.serve(async (req) => {
 
     if (stale) {
       console.log('Stale cache hit for:', normalizedAddress);
+      const enriched = await enrichWithPublicRecords(supabase, stale);
       return new Response(
         JSON.stringify({
           success: true,
           source: 'stale_cache',
-          data: stale,
+          data: enriched,
           cached_at: stale.updated_at,
           stale: true,
         }),
