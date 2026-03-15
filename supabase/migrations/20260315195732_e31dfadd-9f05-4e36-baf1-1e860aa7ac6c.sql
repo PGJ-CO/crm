@@ -1,0 +1,1 @@
+ALTER TABLE public.building_permits ADD CONSTRAINT valid_permit_number CHECK (permit_number IS NOT NULL);
