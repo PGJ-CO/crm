@@ -28,6 +28,7 @@ import Foreclosures from "./pages/Foreclosures";
 import MarketTrends from "./pages/MarketTrends";
 import NeighborhoodAnalysis from "./pages/NeighborhoodAnalysis";
 import PublicRecords from "./pages/PublicRecords";
+import BuyBox from "./pages/BuyBox";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
